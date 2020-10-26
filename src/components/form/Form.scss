@@ -1,0 +1,66 @@
+@import '../../styles/variables';
+@import '../../styles/fonts';
+@import '../../styles/breakpoints';
+
+.form-wrapper {
+  position: relative;
+  line-height: 0;
+  &__left {
+    img {
+      width: 100%;
+    }
+    height: 100%;
+  }
+  &__right {
+    position: relative;
+    line-height: initial;
+    height: 100%;
+    padding: 60px;
+    background: linear-gradient(
+        5.88deg,
+        rgba(165, 165, 180, 0.15) 4.19%,
+        rgba(228, 235, 239, 0.15) 95.81%,
+        rgba(231, 232, 238, 0.15) 95.81%,
+        rgba(231, 232, 238, 0.15) 95.81%
+      ),
+      #fcfcfd;
+    .desc {
+      @include roboto400;
+      color: $black;
+      font-size: 14px;
+      line-height: 24px;
+      text-align: left;
+      margin-bottom: 40px;
+    }
+    @include breakpoint-max($md - 1) {
+      padding: 20px;
+    }
+  }
+  .column-35 {
+    @include breakpoint-max($md - 1) {
+      display: none;
+    }
+  }
+}
+.title {
+  margin-top: 0px;
+  margin-bottom: 56px;
+  padding-top: 50px;
+  @include roboto300;
+  color: $white;
+  font-size: 48px;
+  line-height: 48px;
+  @include breakpoint-max($md - 1) {
+    font-size: 36px;
+    line-height: 42px;
+    padding-top: 25px;
+    margin-bottom: 25px;
+  }
+}
+.top-line {
+  position: absolute;
+  top: -1px;
+  width: 70px;
+  height: 2px;
+  background-color: $green;
+}

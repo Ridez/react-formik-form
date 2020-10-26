@@ -1,0 +1,15 @@
+@import '../styles/breakpoints';
+@import '../styles/variables';
+.blob {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  height: auto;
+  @include breakpoint-max($md - 1) {
+    transform: scale(2);
+    left: 50%;
+    top: 15%;
+    width: 100%;
+  }
+}

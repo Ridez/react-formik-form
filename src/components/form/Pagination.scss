@@ -1,0 +1,46 @@
+@import '../../styles/fonts';
+@import '../../styles/variables';
+@import '../../styles/breakpoints';
+
+.wrap-pag {
+  position: absolute;
+  width: 70px;
+  right: -70px;
+  top: 140px;
+  @include breakpoint-max($md - 1) {
+    display: none;
+  }
+}
+
+.step {
+  @include roboto400;
+  font-size: 11px;
+  line-height: 11px;
+  color: $white;
+  text-align: left;
+  margin-bottom: 54px;
+  &:nth-child(2) {
+    margin-bottom: 43px;
+  }
+  &__line {
+    margin-bottom: 10px;
+    width: 25px;
+    height: 2px;
+    background: #f9f9fb;
+    mix-blend-mode: normal;
+    opacity: 0.25;
+  }
+  &__number,
+  &__txt {
+    margin-left: 10px;
+  }
+  &__number {
+    margin-bottom: 5px;
+  }
+  &.active {
+    .step__line {
+      background: $green;
+      opacity: 1;
+    }
+  }
+}

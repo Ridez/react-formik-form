@@ -1,0 +1,19 @@
+@import '../../../../styles/variables';
+@import '../../../../styles/breakpoints';
+
+.select {
+  display: block;
+  float: left;
+  margin-right: 30px;
+  position: relative;
+  padding: 0px 15px 12px 15px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid $gray;
+  &:focus {
+    outline: none;
+    border-bottom: 2px solid $purple;
+  }
+  @include breakpoint-max($md - 1) {
+  }
+}

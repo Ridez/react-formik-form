@@ -1,0 +1,149 @@
+@import '../../styles/fonts';
+@import '../../styles/variables';
+@import '../../styles/breakpoints';
+
+.wrap-field {
+  position: relative;
+  text-align: left;
+  overflow: hidden;
+  padding-bottom: 25px;
+  &__label {
+    @include roboto400;
+    color: $black2;
+    font-size: 11px;
+    line-height: 28px;
+    margin-left: 15px;
+  }
+  &__input {
+    @include roboto400;
+    font-size: 16px;
+    line-height: 16px;
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 0px 15px 8px 15px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid $gray;
+    &:focus {
+      outline: none;
+      border-bottom: 2px solid $purple;
+    }
+  }
+  &__error {
+    position: absolute;
+    bottom: 10px;
+    @include roboto400;
+    color: $red;
+    font-size: 11px;
+    line-height: 11px;
+    margin-top: 5px;
+    margin-left: 15px;
+    background: linear-gradient(
+        5.88deg,
+        rgba(165, 165, 180, 0.15) 4.19%,
+        rgba(228, 235, 239, 0.15) 95.81%,
+        rgba(231, 232, 238, 0.15) 95.81%,
+        rgba(231, 232, 238, 0.15) 95.81%
+      ),
+      #fcfcfd;
+  }
+  &.error {
+    .wrap-field__input {
+      color: $red;
+      border-bottom: 2px solid $red;
+    }
+  }
+  fieldset {
+    display: flex;
+    flex-direction: row;
+    border: none;
+    padding: 0px;
+    border: 0px;
+  }
+  .field {
+    @include roboto400;
+    font-size: 16px;
+    line-height: 16px;
+    color: $black;
+    position: relative;
+    z-index: 99;
+    display: flex;
+    border: 2px solid $gray;
+    padding: 0;
+    background-color: transparent;
+    &--day {
+      width: 46px;
+      height: 46px;
+      text-align: center;
+    }
+    &--month {
+      width: 132px;
+      height: 50px;
+      padding-left: 10px;
+      padding-right: 40px;
+      background: transparent;
+      appearance: none;
+      @include breakpoint-max($md - 1) {
+        width: 50px;
+        height: 50px;
+        padding-right: 0;
+      }
+    }
+    &--year {
+      padding-left: 10px;
+      width: 129px;
+      @include breakpoint-max($md - 1) {
+        width: 70px;
+      }
+    }
+    &:focus {
+      outline: none;
+      border: 2px solid $purple;
+    }
+  }
+}
+.wrap-select {
+  position: relative;
+  &.month {
+    height: 46px;
+  }
+  .arrow-down {
+    position: absolute;
+    z-index: 1;
+    top: 23px;
+    right: 18px;
+    width: 0px;
+    height: 0px;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid rgba(#2f3030, 0.25);
+    @include breakpoint-max($md - 1) {
+      right: 8px;
+    }
+  }
+  &.prefix {
+    .arrow-down {
+      top: 7px;
+      right: 55px;
+      @include breakpoint-max($md - 1) {
+        right: 38px;
+      }
+    }
+  }
+  .select {
+    appearance: none;
+    width: 120px;
+    @include breakpoint-max($md - 1) {
+      width: 100px;
+    }
+  }
+}
+
+.separator-line {
+  width: 10px;
+  height: 2px;
+  background-color: $gray;
+  top: 50%;
+  margin: 23px 10px 0px 10px;
+}
